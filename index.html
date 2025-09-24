@@ -42,5 +42,80 @@
       Feel free to reach out to me, I am always open and happy to new collaborations and connections!
     </p>
   </div>
+    <script>
+    const colors = ['#61dafb','#a3cef1','#afffba','#ffe066','#c9ada7','#f6bd60'];
+    const equations = [];
+
+    function randomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+    function generateEquation() {
+      const a = randomInt(1, 9);
+      const b = randomInt(1, 9);
+      const ops = ['+', '-', '*'];
+      const op = ops[randomInt(0, ops.length - 1)];
+      let answer;
+      if(op === '+') answer = a + b;
+      else if(op === '-') answer = a - b;
+      else answer = a * b;
+      return { eq: `${a} ${op} ${b}`, ans: `${a} ${op} ${b} = ${answer}` };
+    }
+
+    function createEquationDiv() {
+      const eqData = generateEquation();
+      const div = document.createElement('div');
+      div.textContent = eqData.eq;
+      div.style.position = 'fixed';
+      div.style.left = `${randomInt(0, window.innerWidth - 60)}px`;
+      div.style.top = `${randomInt(0, window.innerHeight - 30)}px`;
+      div.style.fontSize = '16px';
+      div.style.fontWeight = 'bold';
+      div.style.color = colors[randomInt(0, colors.length - 1)];
+      div.style.cursor = 'pointer';
+      div.style.userSelect = 'none';
+      div.style.transition = 'color 0.3s';
+      div.title = 'Hover to see the answer';
+
+      div.addEventListener('mouseenter', () => {
+        div.textContent = eqData.ans;
+        div.style.color = '#fff';
+      });
+      div.addEventListener('mouseleave', () => {
+        div.textContent = eqData.eq;
+        div.style.color = colors[randomInt(0, colors.length - 1)];
+      });
+
+      document.body.appendChild(div);
+
+      // Animate float with random direction & speed:
+      let dx = (Math.random() - 0.5) * 0.8; // horizontal velocity
+      let dy = (Math.random() - 0.5) * 0.8; // vertical velocity
+      function move() {
+        let left = parseFloat(div.style.left);
+        let top = parseFloat(div.style.top);
+        left += dx;
+        top += dy;
+        if(left < 0 || left > window.innerWidth - div.offsetWidth) dx = -dx;
+        if(top < 0 || top > window.innerHeight - div.offsetHeight) dy = -dy;
+        div.style.left = `${left}px`;
+        div.style.top = `${top}px`;
+        requestAnimationFrame(move);
+      }
+      move();
+
+      equations.push(div);
+    }
+
+    // Create 15 moving equations
+    for(let i=0; i<15; i++) createEquationDiv();
+
+    // Responsive reposition on resize
+    window.addEventListener('resize', () => {
+      equations.forEach(div => {
+        let left = parseFloat(div.style.left);
+        let top = parseFloat(div.style.top);
+        if(left > window.innerWidth - div.offsetWidth) div.style.left = '10px';
+        if(top > window.innerHeight - div.offsetHeight) div.style.top = '10px';
+      });
+    });
+  </script>
 </body>
 </html>
