@@ -2,54 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Name - Portfolio</title>
+  <title>About | My AI Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #222; }
-    header { background: #4758a8; color: #fff; padding: 2em 0; text-align: center; }
-    section { max-width: 700px; margin: 2em auto; background: #fff; padding: 2em; box-shadow: 0 2px 8px rgba(0,0,0,0.05);}
-    h1, h2 { margin-top: 0; }
-    ul { padding-left: 1.2em; }
-    .contact a { color: #4758a8; text-decoration: none;}
+    body { background: linear-gradient(120deg, #212a3e 0%, #3a506b 100%); color: #fff; font-family: 'Segoe UI', Arial, sans-serif; margin:0; }
+    nav { background: #131a26; display: flex; justify-content: center; }
+    nav a { color: #61dafb; text-decoration: none; margin: 0 2em; padding: 1.2em 0; font-weight: 500; }
+    nav a.active, nav a:hover { color: #fff; border-bottom: 2px solid #61dafb; }
+    .container { max-width: 700px; margin: 3em auto; background: rgba(33, 42, 62, 0.9); padding: 2em 2.5em; border-radius: 16px; box-shadow: 0 4px 20px rgba(34,193,195,0.13);}
+    h1 { color: #61dafb; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Your Name</h1>
-    <p class="contact">
-      Email: <a href="mailto:your.email@example.com">your.email@example.com</a> |
-      GitHub: <a href="https://github.com/yourgithub" target="_blank">yourgithub</a>
+  <nav>
+    <a href="about.html" class="active">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="education.html">Education</a>
+    <a href="contacts.html">Contacts</a>
+  </nav>
+  <div class="container">
+    <h1>About Me</h1>
+    <p>
+      Welcome to my AI-powered portfolio! I am an enthusiast in artificial intelligence and digital transformation. This site showcases my journey through technology, research, and creative problem-solving.
     </p>
-  </header>
-  <section>
-    <h2>Summary</h2>
-    <p>A brief statement about your professional interests, strengths, and goals.</p>
-
-    <h2>Skills</h2>
-    <ul>
-      <li>Skill one</li>
-      <li>Skill two</li>
-      <li>Skill three</li>
-    </ul>
-
-    <h2>Experience</h2>
-    <ul>
-      <li>
-        <strong>Job Title</strong> at Company<br>
-        <small>Year - Year</small><br>
-        Responsibilities and achievements.
-      </li>
-      <!-- add more jobs -->
-    </ul>
-
-    <h2>Education</h2>
-    <ul>
-      <li>
-        <strong>Degree</strong> – Institution<br>
-        <small>Year - Year</small>
-      </li>
-      <!-- add more education -->
-    </ul>
-  </section>
+    <p>
+      Explore the tabs to discover my projects, publications, academic achievements, and ways to connect.
+    </p>
+  </div>
 </body>
 </html>
