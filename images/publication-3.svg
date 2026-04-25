@@ -1,0 +1,16 @@
+<svg width="400" height="280" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gp3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="280" rx="28" fill="url(#gp3)"/>
+  <path d="M76 72h248v134a20 20 0 0 1-20 20H96a20 20 0 0 1-20-20V72Z" fill="rgba(255,255,255,0.16)"/>
+  <path d="M98 108h204" stroke="#dcfce7" stroke-width="10" stroke-linecap="round" opacity="0.95"/>
+  <path d="M98 146h176" stroke="#bbf7d0" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+  <path d="M98 184h150" stroke="#86efac" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="140" cy="210" r="18" fill="#f8fafc" opacity="0.88"/>
+  <circle cx="180" cy="210" r="18" fill="#dcfce7" opacity="0.8"/>
+  <text x="28" y="264" font-family="Inter, sans-serif" font-size="24" fill="#f0fdf4" font-weight="700">Diagnosis</text>
+</svg>
