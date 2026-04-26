@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     :root {
-      color-scheme: dark;
+      color-scheme: light;
       font-family: Inter, 'Segoe UI', Arial, sans-serif;
     }
     * {
@@ -18,10 +18,10 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 24%),
-                  radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.08), transparent 28%),
-                  linear-gradient(135deg, #070b16 0%, #101c33 50%, #0f1b2f 100%);
-      color: #e8f3ff;
+      background: radial-gradient(circle at top left, rgba(224, 242, 254, 0.9), transparent 28%),
+                  radial-gradient(circle at bottom right, rgba(186, 230, 253, 0.8), transparent 30%),
+                  linear-gradient(135deg, #eaf6ff 0%, #d6edff 45%, #c6e6ff 100%);
+      color: #0f172a;
       overflow-x: hidden;
     }
     body::before {
@@ -30,17 +30,17 @@
       inset: 0;
       pointer-events: none;
       background:
-        repeating-linear-gradient(0deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 40px),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 40px);
-      opacity: 0.35;
+        repeating-linear-gradient(0deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0.04) 1px, transparent 1px, transparent 40px),
+        repeating-linear-gradient(90deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0.04) 1px, transparent 1px, transparent 40px);
+      opacity: 0.32;
       z-index: -1;
     }
     .background-grid {
       position: fixed;
       inset: 0;
       z-index: -2;
-      background: radial-gradient(circle at 20% 12%, rgba(148, 163, 184, 0.05), transparent 18%),
-                  radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.08), transparent 20%);
+      background: radial-gradient(circle at 20% 12%, rgba(59, 130, 246, 0.12), transparent 18%),
+                  radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.14), transparent 20%);
     }
     nav {
       position: sticky;
@@ -51,12 +51,12 @@
       flex-wrap: wrap;
       gap: 1rem;
       padding: 1rem 1.5rem;
-      background: rgba(7, 11, 22, 0.88);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(96, 165, 250, 0.25);
       backdrop-filter: blur(12px);
     }
     nav a {
-      color: #a5b4fc;
+      color: #0f172a;
       text-decoration: none;
       padding: 0.75rem 1rem;
       font-weight: 600;
@@ -65,8 +65,8 @@
     }
     nav a:hover,
     nav a:focus-visible {
-      color: #ffffff;
-      background: rgba(148, 163, 184, 0.12);
+      color: #0f172a;
+      background: rgba(59, 130, 246, 0.14);
     }
     .page-shell {
       width: min(1180px, calc(100% - 2rem));
@@ -79,12 +79,12 @@
     }
     .hero-card,
     .section-panel {
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.12);
+      background: rgba(248, 250, 255, 0.92);
+      border: 1px solid rgba(96, 165, 250, 0.24);
       border-radius: 32px;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 24px 80px rgba(59, 130, 246, 0.12);
       padding: 2rem;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(18px);
     }
     .hero-card {
       display: grid;
@@ -126,13 +126,14 @@
     .card-meta,
     .card-desc,
     .contact-line {
-      color: #cbd5e1;
+      color: #334155;
       line-height: 1.75;
     }
     .hero-copy p {
       max-width: 45rem;
       margin: 1rem 0 0;
       font-size: 1rem;
+      color: #334155;
     }
     .section-header {
       display: flex;
@@ -143,24 +144,12 @@
       flex-wrap: wrap;
     }
     .section-header small {
-      color: #94a3b8;
+      color: #1d4ed8;
       font-size: 0.97rem;
     }
     .section-panel {
-      max-height: 72vh;
-      overflow-y: auto;
-    }
-    .section-panel::-webkit-scrollbar {
-      width: 12px;
-    }
-    .section-panel::-webkit-scrollbar-track {
-      background: rgba(15, 23, 42, 0.55);
-      border-radius: 999px;
-    }
-    .section-panel::-webkit-scrollbar-thumb {
-      background: rgba(56, 189, 248, 0.35);
-      border-radius: 999px;
-      border: 3px solid rgba(15, 23, 42, 0.55);
+      max-height: none;
+      overflow: visible;
     }
     .card {
       display: grid;
@@ -168,8 +157,8 @@
       gap: 1.25rem;
       padding: 1.3rem;
       margin-bottom: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(148, 163, 184, 0.08);
+      background: rgba(220, 234, 255, 0.94);
+      border: 1px solid rgba(37, 99, 235, 0.18);
       border-radius: 24px;
     }
     .card:last-child {
@@ -192,19 +181,20 @@
     .card-title {
       font-size: 1.05rem;
       margin: 0 0 0.55rem;
-      color: #eff6ff;
+      color: #0f172a;
       line-height: 1.3;
     }
     .card-meta {
       display: block;
       font-size: 0.98rem;
       margin-bottom: 0.9rem;
-      color: #93c5fd;
+      color: #1d4ed8;
     }
     .card-desc {
       font-size: 0.97rem;
       margin: 0;
       white-space: pre-wrap;
+      color: #334155;
     }
     .tag-list {
       display: flex;
@@ -215,8 +205,8 @@
     .tag {
       display: inline-flex;
       padding: 0.35rem 0.75rem;
-      background: rgba(99, 102, 241, 0.14);
-      color: #dbeafe;
+      background: rgba(59, 130, 246, 0.16);
+      color: #0f172a;
       border-radius: 999px;
       font-size: 0.86rem;
     }
@@ -226,27 +216,27 @@
       gap: 1rem;
     }
     .contact-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(148, 163, 184, 0.08);
+      background: rgba(239, 246, 255, 0.86);
+      border: 1px solid rgba(59, 130, 246, 0.18);
       border-radius: 22px;
       padding: 1.5rem;
     }
     .contact-label {
       display: block;
       margin-bottom: 0.45rem;
-      color: #93c5fd;
+      color: #1d4ed8;
       font-weight: 700;
       font-size: 0.95rem;
     }
     .contact-link {
-      color: #7dd3fc;
+      color: #1d4ed8;
       text-decoration: none;
       word-break: break-all;
     }
     .footer {
       margin-top: 2rem;
       text-align: center;
-      color: #94a3b8;
+      color: #475569;
       font-size: 0.95rem;
     }
     @media (max-width: 860px) {
@@ -294,7 +284,7 @@
       <div class="section-header">
         <div>
           <h2>Projects</h2>
-          <small>Interactive summaries with thumbnail visuals and easy scrolling.</small>
+          <small>All project summaries are visible without extra scrolling.</small>
         </div>
       </div>
       <div class="section-panel">
@@ -344,7 +334,7 @@
       <div class="section-header">
         <div>
           <h2>Publications</h2>
-          <small>Selected recent work with visual thumbnails and keywords.</small>
+          <small>All publications are visible at once with thumbnail previews.</small>
         </div>
       </div>
       <div class="section-panel">
